@@ -1,0 +1,27 @@
+name: ChunkShuffler
+main: com.gmail.shayanbahrainy.chunkshuffler.ChunkShuffler
+version: .5
+author: Shyaaan
+api-version: '1.20'
+depend: [FastAsyncWorldEdit]
+commands:
+   shuffle:
+        description: Enable/Disable shuffling.
+        usage: /<command>
+        permission: ChunkShuffler.Admin
+        permission-message: You don't have <permission>
+   shuffletime:
+       description: The amount of time between chunk shuffles
+       usage: /<command> <minutes>
+       permission: ChunkShuffler.Admin
+       permission-message: You don't have <permission>
+   loadingworld:
+       description: Send the user to the loading world and back.
+       usage: /<command>
+       permission: ChunkShuffler.Admin
+       permission-message: Why should I let you in?
+   shufflespeed:
+       description: Set the speed of shuffling in blocks per tick (Affects Performance Slightly)
+       usage: /<command> <blocks per second>
+       permission: ChunkShuffler.Admin
+       permission-message: I'm not listening to you. 
