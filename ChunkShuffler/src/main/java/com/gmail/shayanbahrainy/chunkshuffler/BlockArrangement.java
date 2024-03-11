@@ -29,7 +29,7 @@ public class BlockArrangement implements Runnable{
 			SelfDestruct = true;
 		}
 		if (CLimit > CMap.size()) {
-			CLimit = CMap.size();
+			CLimit = CMap.size() - 1;
 		}
 		KeyId = 0;
 		Placements = new ArrayList<BlockPlacement>();

@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -37,7 +38,9 @@ public final class Handler implements Listener {
     @EventHandler 
     public void onPlayerJoin(PlayerJoinEvent event) {
     	if (ChunkShuffler.instance.getState()) {
-    		ChunkShuffler.instance.storePlayer(event.getPlayer(), true);
+    		Player player = event.getPlayer();
+    		ChunkShuffler.instance.storePlayer(player, true);
+    		player.sendMessage("You logged in during a shuffle.");
     	}
     }
 }

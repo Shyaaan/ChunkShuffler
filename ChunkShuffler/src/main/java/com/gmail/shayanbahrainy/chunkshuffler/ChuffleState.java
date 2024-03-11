@@ -36,6 +36,7 @@ public class ChuffleState implements Runnable{
 				if (i == DataMap.size() - 1) {				
 					Bukkit.getScheduler().cancelTask(taskid);
 					DataMap.clear();
+					ChunkShuffler.instance.setState(false);
 					for (Player p : Bukkit.getOnlinePlayers()) {
 						ChunkShuffler.instance.restorePlayer(p, true);
 					}

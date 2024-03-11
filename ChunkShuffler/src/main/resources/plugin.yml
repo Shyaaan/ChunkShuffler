@@ -1,6 +1,6 @@
 name: ChunkShuffler
 main: com.gmail.shayanbahrainy.chunkshuffler.ChunkShuffler
-version: .5
+version: 1.0
 author: Shyaaan
 api-version: '1.20'
 depend: [FastAsyncWorldEdit]
@@ -25,3 +25,8 @@ commands:
        usage: /<command> <blocks per second>
        permission: ChunkShuffler.Admin
        permission-message: I'm not listening to you. 
+   debug:
+       description: Toggle Debug Mode
+       usage: /<command>
+       permission: ChunkShuffler.Admin
+       permission-message: I'm not telling you anything.

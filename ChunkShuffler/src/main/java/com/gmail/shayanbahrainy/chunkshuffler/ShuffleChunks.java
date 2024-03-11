@@ -70,6 +70,9 @@ public class ShuffleChunks implements Runnable{
             ChunkMap.put(element1, element2);
             ChunkMap.put(element2, element1);
         }
+        if (ChunkShuffler.instance.isDebug()) {
+        	Bukkit.getLogger().info("ChunkMap: " + ChunkMap.toString());
+        }
 		return ChunkMap;
 	}
 	public void setTaskId(int TaskId) {

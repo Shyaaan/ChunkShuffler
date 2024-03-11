@@ -2,6 +2,7 @@ package com.gmail.shayanbahrainy.chunkshuffler;
 
 
 
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -50,6 +51,7 @@ public class ChunkShuffler extends JavaPlugin {
     private String DataBaseUri = "jdbc:sqlite:plugins/ChunkShuffler/Data.db";
 	private int ShuffleSpeed;
 	private boolean ShuffleState;
+	private boolean DebugMode = false;
     
     @Override
     public void onEnable() {
@@ -169,6 +171,10 @@ public class ChunkShuffler extends JavaPlugin {
     			return false;
     		}
     	}
+    	if (cmd.getName().equalsIgnoreCase("debug")) {
+    		DebugMode = !DebugMode;
+    		return true;
+    	}
     	return false;
     }
     public boolean isShuffleEnabled() {
@@ -216,6 +222,9 @@ public class ChunkShuffler extends JavaPlugin {
     		 else {
     			 n++;
     		 }
+    	 }
+    	 if (DebugMode) {
+    		 Bukkit.getLogger().info("PlayedChunks: " + Chunks.toString());
     	 }
     	return Chunks;
     }
@@ -363,5 +372,8 @@ public class ChunkShuffler extends JavaPlugin {
 	}
 	public boolean getState() {
 		return ShuffleState;
+	}
+	public boolean isDebug() {
+		return DebugMode;
 	}
 }
